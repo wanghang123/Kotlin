@@ -1,0 +1,12 @@
+项目学习：https://github.com/githubwing/GankClient-Kotlin
+http://www.jianshu.com/p/acae773a3ffb
+
+kotlin高级部分
+1、函数参数为函数
+2、lambda表达式
+3、对象表达式
+4、内联函数
+内联：编译器将使用函数的定义体来替代函数调用语句，这种替代行为发生在编译阶段而非程序运行阶段
+在函数前面添加inline
+
+5、高阶函数

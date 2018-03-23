@@ -1,0 +1,64 @@
+1、数组操作
+数组初始化
+private var dots: Array<ImageView>? = null
+数组赋值
+dots = Array(size,{i -> findViewById(ids[i]) as ImageView})
+
+2、静态变量和静态方法
+在类中
+class MyClass{
+	companion object{}
+}
+
+3、类的构造函数
+每一个构造函数都必须为每一个成员变量赋予初值.
+primary constructor,这个构造函数的头部紧跟在类名之后,函数体却在类中,是由init关键字包含的一个代码块,
+
+4、变量
+var 可变变量
+val 不可变变量
+Kotlin不允许声明变量但不初始化
+
+5、 Kotlin-对象表达式，对象声明 Kotlin object express 匿名内部类
+场景一：为某一个控件设置监听事件
+场景二:Dialog消失时，在启动Activity做回调
+在Java中，我们通常采用通过匿名内部类(anonymous inner class)来解决这些问题. 在Kotlin中，没有匿名内部类这个概念，而是采用了对象表达式(object expression)和对象声明(object declaration)
+
+var handler = object: Handler() {  
+    override fun handleMessage(msg: Message) {
+        toast("2s后执行匿名内部类的toast")  
+    }  
+} 
+
+6、lambda表达式匿名函数
+其实最方便的办法是传递一个字面函数(通常是 lambda 表达式)：
+
+val result = lock(lock, { sharedResource.operation() })
+在 kotlin 中有一个约定，如果最后一个参数是函数，可以省略括号.
+
+7、is和as
+kotlin中使用is来代替java中的instanceof，可以用来判断当前实例所属类。
+使用as作为类型强制转换.
+
+8、数组array  创建数组（3种方法），空数组，访问元素，遍历数组，检查下标
+var clickID = arrayOfNulls<Int>(2)//指定长度
+
+9、集合 只读和可变
+listOf   mutableListOf
+
+10、内联函数 inline
+内联：编译器将使用函数的定义体来替代函数调用语句
+
+11、函数就是对象
+可以直接引用函数
+
+12、工具类静态方法多，类名前添加object修饰
+object GankRouter{
+    fun router(context: Context,uri : String){
+        val intent = Intent()
+        intent.data = Uri.parse(uri)
+        intent.action = Intent.ACTION_VIEW
+        context.startActivity(intent)
+    }
+
+}
